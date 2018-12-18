@@ -35,7 +35,7 @@ namespace Models.EF
         /// <returns>A list of localized entities</returns>
         public IEnumerable<TTranslatedEntity> GetAll(string cultureCode)
         {
-            return Context.Set<TEntity>().Include(entity => entity.LocalizableContents).ToList().Select(entity => entity.GetTranslatedEntity(cultureCode));
+            return Context.Set<TEntity>().Include(entity => entity.LocalizableContents).ToList().Select(entity => entity.GetLocalizedEntity(cultureCode));
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Models.EF
         {
             var entity = Context.Set<TEntity>().Find(id);
             Context.Entry(entity).Collection(e => e.LocalizableContents).Load();
-            return entity.GetTranslatedEntity(cultureCode);
+            return entity.GetLocalizedEntity(cultureCode);
         }
     }
 }

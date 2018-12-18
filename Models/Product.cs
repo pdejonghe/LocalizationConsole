@@ -8,7 +8,7 @@ namespace Models
         public int Id { get; set; }
         public decimal Price { get; set; }
 
-        public override LocalizedProduct GetTranslatedEntity(string cultureCode)
+        public override LocalizedProduct GetLocalizedEntity(string cultureCode)
         {
             var translatedEntity = Activator.CreateInstance<LocalizedProduct>();
             var localizableProduct = LocalizableContents.FirstOrDefault(p => p.CultureCode == cultureCode)

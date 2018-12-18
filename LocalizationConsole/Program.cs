@@ -9,7 +9,6 @@ using System.Linq;
 
 namespace LocalizationConsole
 {
-    //https://medium.com/@kritner/net-core-console-application-ioptions-t-configuration-ae74bfafe1c5
     public static class Program
     {
         private static LocalizationDbContext GetContext()

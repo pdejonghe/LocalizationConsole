@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Models
 {
-    public interface ILocalizableEntityRepository<in TEntity, TLocalizableContent, out TTranslatedEntity>
-        where TEntity : ILocalizableEntity<TTranslatedEntity, TLocalizableContent>
+    public interface ILocalizableEntityRepository<in TLocalizableEntity, TLocalizableContent, out TLocalizedEntity>
+        where TLocalizableEntity : ILocalizableEntity<TLocalizedEntity, TLocalizableContent>
         where TLocalizableContent : ILocalizableContent
     {
-        void Add(TEntity entity);
-        IEnumerable<TTranslatedEntity> GetAll(string cultureCode);
-        TTranslatedEntity Get(int Id, string cultureCode);
+        void Add(TLocalizableEntity entity);
+        IEnumerable<TLocalizedEntity> GetAll(string cultureCode);
+        TLocalizedEntity Get(int Id, string cultureCode);
     }
 }
