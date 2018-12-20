@@ -1,5 +1,11 @@
-﻿namespace Models
+﻿using Models.Foundation;
+
+namespace Models
 {
+    /// <summary>
+    /// The localizable property set of a Product.
+    /// Inherits from <see cref="LocalizablePropertySet"/>
+    /// </summary>
     public class LocalizableProductPropertySet : LocalizablePropertySet
     {
         public int Id { get; set; }
