@@ -10,7 +10,7 @@ namespace Models.EF
     {
         private DbContext Context { get; }
 
-        public LocalizableEntityRepository(DbContext context)
+        protected LocalizableEntityRepository(DbContext context)
         {
             Context = context;
         }

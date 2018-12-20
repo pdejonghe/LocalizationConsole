@@ -39,9 +39,9 @@ namespace LocalizationConsole
             var bucket = new Product
             {
                 Price = 15.78m,
-                LocalizableContents = new List<LocalizableProduct>
+                LocalizableContents = new List<LocalizableProductPropertySet>
                 {
-                    new LocalizableProduct
+                    new LocalizableProductPropertySet
                     {
                         CultureCode = "de-de",
                         Name = "Eimer",

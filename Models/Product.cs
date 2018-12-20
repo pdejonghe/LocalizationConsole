@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Models
 {
-    public class Product : LocalizableEntity<LocalizedProduct, LocalizableProduct>
+    public class Product : LocalizableEntity<LocalizedProduct, LocalizableProductPropertySet>
     {
         public int Id { get; set; }
         public decimal Price { get; set; }

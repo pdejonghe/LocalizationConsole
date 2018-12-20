@@ -1,6 +1,6 @@
 ﻿namespace Models
 {
-    public class LocalizableProduct : LocalizableContent
+    public class LocalizableProductPropertySet : LocalizableContent
     {
         public int Id { get; set; }
         public string Name { get; set; }

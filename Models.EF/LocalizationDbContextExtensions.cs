@@ -1,8 +1,4 @@
-﻿using Models;
-using Models.EF;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Models.EF
 {
@@ -18,15 +14,15 @@ namespace Models.EF
                 new Models.Product
                 {
                     Price = 12.5m,
-                    LocalizableContents = new List<LocalizableProduct>
+                    LocalizableContents = new List<LocalizableProductPropertySet>
                     {
-                        new LocalizableProduct
+                        new LocalizableProductPropertySet
                         {
                             CultureCode = "en-US",
                             Name = "Screwdriver",
                             Description = "A nice tool to put screws into all kinds of material"
                         },
-                        new LocalizableProduct
+                        new LocalizableProductPropertySet
                         {
                             CultureCode = "fr-FR",
                             Name = "Tournevis",
@@ -41,15 +37,15 @@ namespace Models.EF
                 new Models.Product
                 {
                     Price = 20.05m,
-                    LocalizableContents = new List<LocalizableProduct>
+                    LocalizableContents = new List<LocalizableProductPropertySet>
                     {
-                        new LocalizableProduct
+                        new LocalizableProductPropertySet
                         {
                             CultureCode = "en-US",
                             Name = "Hammer",
                             Description = "Nails, watch out!"
                         },
-                        new LocalizableProduct
+                        new LocalizableProductPropertySet
                         {
                             CultureCode = "fr-FR",
                             Name = "Marteau",
@@ -64,15 +60,15 @@ namespace Models.EF
                 new Models.Product
                 {
                     Price = 7.45m,
-                    LocalizableContents = new List<LocalizableProduct>
+                    LocalizableContents = new List<LocalizableProductPropertySet>
                     {
-                        new LocalizableProduct
+                        new LocalizableProductPropertySet
                         {
                             CultureCode = "es-ES",
                             Name = "Vio",
                             Description = "Bueno para hacer estantes en dos"
                         },
-                        new LocalizableProduct
+                        new LocalizableProductPropertySet
                         {
                             CultureCode = "nl-BE",
                             Name = "Zaag",
