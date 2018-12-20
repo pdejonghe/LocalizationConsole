@@ -1,6 +1,6 @@
 ﻿namespace Models
 {
-    public interface ILocalizableContent
+    public interface ILocalizablePropertySet
     {
         string CultureCode { get; set; }
     }

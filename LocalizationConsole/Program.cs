@@ -39,7 +39,7 @@ namespace LocalizationConsole
             var bucket = new Product
             {
                 Price = 15.78m,
-                LocalizableContents = new List<LocalizableProductPropertySet>
+                LocalizablePropertySets = new List<LocalizableProductPropertySet>
                 {
                     new LocalizableProductPropertySet
                     {

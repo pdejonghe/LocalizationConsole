@@ -6,7 +6,7 @@ namespace Models.EF
 {
     public abstract class LocalizableEntityRepository<TEntity, TLocalizableContent, TTranslatedEntity>
         where TEntity : class, ILocalizableEntity<TTranslatedEntity, TLocalizableContent>
-        where TLocalizableContent : class, ILocalizableContent
+        where TLocalizableContent : class, ILocalizablePropertySet
     {
         private DbContext Context { get; }
 
@@ -17,7 +17,7 @@ namespace Models.EF
 
         /// <summary>
         /// Adds an object of type TEntity to the repository.
-        /// Note that TEntity is a ILocalizableEntity, and hence contains a collection of ILocalizableContent instances.
+        /// Note that TEntity is a ILocalizableEntity, and hence contains a collection of ILocalizablePropertySet instances.
         /// </summary>
         /// <param name="entity"></param>
         public void Add(TEntity entity)
@@ -35,7 +35,7 @@ namespace Models.EF
         /// <returns>A list of localized entities</returns>
         public IEnumerable<TTranslatedEntity> GetAll(string cultureCode)
         {
-            return Context.Set<TEntity>().Include(entity => entity.LocalizableContents).ToList().Select(entity => entity.GetLocalizedEntity(cultureCode));
+            return Context.Set<TEntity>().Include(entity => entity.LocalizablePropertySets).ToList().Select(entity => entity.GetLocalizedEntity(cultureCode));
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Models.EF
         public TTranslatedEntity Get(int id, string cultureCode)
         {
             var entity = Context.Set<TEntity>().Find(id);
-            Context.Entry(entity).Collection(e => e.LocalizableContents).Load();
+            Context.Entry(entity).Collection(e => e.LocalizablePropertySets).Load();
             return entity.GetLocalizedEntity(cultureCode);
         }
     }

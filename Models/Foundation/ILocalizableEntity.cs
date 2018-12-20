@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Models
 {
-    public interface ILocalizableEntity<out TLocalizedEntity, TLocalizableContent> where TLocalizableContent : ILocalizableContent
+    public interface ILocalizableEntity<out TLocalizedEntity, TLocalizablePropertySet> where TLocalizablePropertySet : ILocalizablePropertySet
     {
-        ICollection<TLocalizableContent> LocalizableContents { get; set; }
+        ICollection<TLocalizablePropertySet> LocalizablePropertySets { get; set; }
         TLocalizedEntity GetLocalizedEntity(string cultureCode);
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Models
 {
-    public abstract class LocalizableEntity<TLocalizedEntity, TLocalizableContent> : ILocalizableEntity<TLocalizedEntity, TLocalizableContent> 
-        where TLocalizableContent : ILocalizableContent
+    public abstract class LocalizableEntity<TLocalizedEntity, TLocalizablePropertySet> : ILocalizableEntity<TLocalizedEntity, TLocalizablePropertySet> 
+        where TLocalizablePropertySet : ILocalizablePropertySet
     {
-        public ICollection<TLocalizableContent> LocalizableContents { get; set; }
+        public ICollection<TLocalizablePropertySet> LocalizablePropertySets { get; set; }
         public abstract TLocalizedEntity GetLocalizedEntity(string cultureCode);
     }
 }
