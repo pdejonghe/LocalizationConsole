@@ -24,8 +24,8 @@ namespace LocalizationConsole
 
         private static void PrintProperties(object obj)
         {
-            Console.WriteLine($"Displaying {obj.GetType().Name}");
-            Console.WriteLine("--------------------------------");
+            //Console.WriteLine($"Displaying {obj.GetType().Name}");
+            //Console.WriteLine();
             foreach (var prop in obj.GetType().GetProperties().Where(p => p.CanRead))
             {
                 Console.WriteLine($"{prop.Name}: {prop.GetValue(obj)}");
@@ -33,9 +33,8 @@ namespace LocalizationConsole
             Console.WriteLine();
         }
 
-        static void Main(string[] args)
+        private static void AddABucket(ProductRepository productRepository)
         {
-            var productRepository = new ProductRepository(GetContext());
             var bucket = new Product
             {
                 Price = 15.78m,
@@ -50,17 +49,22 @@ namespace LocalizationConsole
                 }
             };
             productRepository.Add(bucket);
+        }
 
-            Console.WriteLine("fr-FR");
-            foreach (var product in productRepository.GetAll("fr-FR"))
-            {
-                PrintProperties(product);
-            }
+        static void Main(string[] args)
+        {
+            var productRepository = new ProductRepository(GetContext());
+            AddABucket(productRepository);
 
-            Console.WriteLine("nl-BE");
-            foreach (var product in productRepository.GetAll("nl-BE"))
+            var cultureCodes = new[] {"fr-FR", "nl-BE", "xx-XX"};
+            foreach (var cultureCode in cultureCodes)
             {
-                PrintProperties(product);
+                Console.WriteLine(cultureCode);
+                Console.WriteLine("--------------------------");
+                foreach (var product in productRepository.GetAll(cultureCode))
+                {
+                    PrintProperties(product);
+                }
             }
 
             Console.ReadKey();
