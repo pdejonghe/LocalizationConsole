@@ -2,9 +2,9 @@
 {
     /// <summary>
     /// An abstract localizable property set that groups the localizable (translatable) properties of the master entity.
-    /// Implements <see cref="ILocalizablePropertySet"/>
+    /// Implements <see cref="ILocalizedPropertySet"/>
     /// </summary>
-    public abstract class LocalizablePropertySet : ILocalizablePropertySet
+    public abstract class LocalizedPropertySet : ILocalizedPropertySet
     {
         /// <summary>
         /// The culture code used for localization <see cref="System.Globalization.CultureInfo"/>

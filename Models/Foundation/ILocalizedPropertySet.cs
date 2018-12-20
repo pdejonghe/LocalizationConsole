@@ -1,9 +1,9 @@
 ﻿namespace Models.Foundation
 {
     /// <summary>
-    /// An implementation of ILocalizablePropertySet groups the localizable (translatable) properties of the master entity.
+    /// An implementation of ILocalizedPropertySet groups the localizable (translatable) properties of the master entity.
     /// </summary>
-    public interface ILocalizablePropertySet
+    public interface ILocalizedPropertySet
     {
         /// <summary>
         /// The culture code used for localization <see cref="System.Globalization.CultureInfo"/>

@@ -6,11 +6,11 @@ namespace Models.Foundation
     /// Interface for a localizable entity repository.
     /// </summary>
     /// <typeparam name="TLocalizableEntity">Base class of entities that contain localizable properties <see cref="ILocalizableEntity{TLocalizedEntity,TLocalizablePropertySet}"/>.</typeparam>
-    /// <typeparam name="TLocalizablePropertySet">An abstract localizable property set that groups the localizable (translatable) properties of the master entity. Implements <see cref="ILocalizablePropertySet"/></typeparam>
+    /// <typeparam name="TLocalizablePropertySet">An abstract localizable property set that groups the localizable (translatable) properties of the master entity. Implements <see cref="ILocalizedPropertySet"/></typeparam>
     /// <typeparam name="TLocalizedEntity">The localized entity</typeparam>
     public interface ILocalizableEntityRepository<in TLocalizableEntity, TLocalizablePropertySet, out TLocalizedEntity>
         where TLocalizableEntity : ILocalizableEntity<TLocalizedEntity, TLocalizablePropertySet>
-        where TLocalizablePropertySet : ILocalizablePropertySet
+        where TLocalizablePropertySet : ILocalizedPropertySet
     {
         /// <summary>
         /// Adds an entity, together with its localized property set.

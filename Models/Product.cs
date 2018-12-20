@@ -4,7 +4,7 @@ using Models.Foundation;
 
 namespace Models
 {
-    public class Product : LocalizableEntity<LocalizedProduct, LocalizableProductPropertySet>
+    public class Product : LocalizableEntity<LocalizedProduct, LocalizedProductPropertySet>
     {
         public int Id { get; set; }
         public decimal Price { get; set; }

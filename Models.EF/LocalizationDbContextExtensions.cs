@@ -14,15 +14,15 @@ namespace Models.EF
                 new Models.Product
                 {
                     Price = 12.5m,
-                    LocalizablePropertySets = new List<LocalizableProductPropertySet>
+                    LocalizablePropertySets = new List<LocalizedProductPropertySet>
                     {
-                        new LocalizableProductPropertySet
+                        new LocalizedProductPropertySet
                         {
                             CultureCode = "en-US",
                             Name = "Screwdriver",
                             Description = "A nice tool to put screws into all kinds of material"
                         },
-                        new LocalizableProductPropertySet
+                        new LocalizedProductPropertySet
                         {
                             CultureCode = "fr-FR",
                             Name = "Tournevis",
@@ -37,15 +37,15 @@ namespace Models.EF
                 new Models.Product
                 {
                     Price = 20.05m,
-                    LocalizablePropertySets = new List<LocalizableProductPropertySet>
+                    LocalizablePropertySets = new List<LocalizedProductPropertySet>
                     {
-                        new LocalizableProductPropertySet
+                        new LocalizedProductPropertySet
                         {
                             CultureCode = "en-US",
                             Name = "Hammer",
                             Description = "Nails, watch out!"
                         },
-                        new LocalizableProductPropertySet
+                        new LocalizedProductPropertySet
                         {
                             CultureCode = "fr-FR",
                             Name = "Marteau",
@@ -60,15 +60,15 @@ namespace Models.EF
                 new Models.Product
                 {
                     Price = 7.45m,
-                    LocalizablePropertySets = new List<LocalizableProductPropertySet>
+                    LocalizablePropertySets = new List<LocalizedProductPropertySet>
                     {
-                        new LocalizableProductPropertySet
+                        new LocalizedProductPropertySet
                         {
                             CultureCode = "es-ES",
                             Name = "Vio",
                             Description = "Bueno para hacer estantes en dos"
                         },
-                        new LocalizableProductPropertySet
+                        new LocalizedProductPropertySet
                         {
                             CultureCode = "nl-BE",
                             Name = "Zaag",

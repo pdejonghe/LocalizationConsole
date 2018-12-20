@@ -5,9 +5,9 @@ using Models.Foundation;
 
 namespace Models.EF.Foundation
 {
-    public abstract class LocalizableEntityRepository<TEntity, TLocalizableContent, TTranslatedEntity>
-        where TEntity : class, ILocalizableEntity<TTranslatedEntity, TLocalizableContent>
-        where TLocalizableContent : class, ILocalizablePropertySet
+    public abstract class LocalizableEntityRepository<TEntity, TLocalizedPropertySet, TLocalizedEntity>
+        where TEntity : class, ILocalizableEntity<TLocalizedEntity, TLocalizedPropertySet>
+        where TLocalizedPropertySet : class, ILocalizedPropertySet
     {
         private DbContext Context { get; }
 
@@ -18,7 +18,7 @@ namespace Models.EF.Foundation
 
         /// <summary>
         /// Adds an object of type TEntity to the repository.
-        /// Note that TEntity is a ILocalizableEntity, and hence contains a collection of ILocalizablePropertySet instances.
+        /// Note that TEntity is a ILocalizableEntity, and hence contains a collection of ILocalizedPropertySet instances.
         /// </summary>
         /// <param name="entity"></param>
         public void Add(TEntity entity)
@@ -34,7 +34,7 @@ namespace Models.EF.Foundation
         /// </summary>
         /// <param name="cultureCode">The ISO code of the culture</param>
         /// <returns>A list of localized entities</returns>
-        public IEnumerable<TTranslatedEntity> GetAll(string cultureCode)
+        public IEnumerable<TLocalizedEntity> GetAll(string cultureCode)
         {
             return Context.Set<TEntity>().Include(entity => entity.LocalizablePropertySets).ToList().Select(entity => entity.GetLocalizedEntity(cultureCode));
         }
@@ -47,7 +47,7 @@ namespace Models.EF.Foundation
         /// <param name="id"></param>
         /// <param name="cultureCode">The ISO code of the culture</param>
         /// <returns>A localized entity</returns>
-        public TTranslatedEntity Get(int id, string cultureCode)
+        public TLocalizedEntity Get(int id, string cultureCode)
         {
             var entity = Context.Set<TEntity>().Find(id);
             Context.Entry(entity).Collection(e => e.LocalizablePropertySets).Load();

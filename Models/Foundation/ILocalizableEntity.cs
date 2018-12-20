@@ -7,7 +7,7 @@ namespace Models.Foundation
     /// </summary>
     /// <typeparam name="TLocalizedEntity">The full entity that contains the correctly localized property set</typeparam>
     /// <typeparam name="TLocalizablePropertySet">The localizable property set</typeparam>
-    public interface ILocalizableEntity<out TLocalizedEntity, TLocalizablePropertySet> where TLocalizablePropertySet : ILocalizablePropertySet
+    public interface ILocalizableEntity<out TLocalizedEntity, TLocalizablePropertySet> where TLocalizablePropertySet : ILocalizedPropertySet
     {
         /// <summary>
         /// All localized property sets for the master entity.
