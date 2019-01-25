@@ -12,9 +12,9 @@ namespace Models
         public override LocalizedProduct GetLocalizedEntity(string cultureCode)
         {
             var localizedProduct = Activator.CreateInstance<LocalizedProduct>();
-            var localizedProductPropertySet = LocalizablePropertySets.FirstOrDefault(p => p.CultureCode == cultureCode)
-                                        ?? LocalizablePropertySets.FirstOrDefault(p => p.CultureCode == "en-US")
-                                        ?? LocalizablePropertySets.FirstOrDefault();
+            var localizedProductPropertySet = LocalizedPropertySets.FirstOrDefault(p => p.CultureCode == cultureCode)
+                                        ?? LocalizedPropertySets.FirstOrDefault(p => p.CultureCode == "en-US")
+                                        ?? LocalizedPropertySets.FirstOrDefault();
 
             localizedProduct.Id = this.Id;
             localizedProduct.Price = this.Price;

@@ -14,7 +14,7 @@ namespace Models.EF
                 new Models.Product
                 {
                     Price = 12.5m,
-                    LocalizablePropertySets = new List<LocalizedProductPropertySet>
+                    LocalizedPropertySets = new List<LocalizedProductPropertySet>
                     {
                         new LocalizedProductPropertySet
                         {
@@ -37,7 +37,7 @@ namespace Models.EF
                 new Models.Product
                 {
                     Price = 20.05m,
-                    LocalizablePropertySets = new List<LocalizedProductPropertySet>
+                    LocalizedPropertySets = new List<LocalizedProductPropertySet>
                     {
                         new LocalizedProductPropertySet
                         {
@@ -60,7 +60,7 @@ namespace Models.EF
                 new Models.Product
                 {
                     Price = 7.45m,
-                    LocalizablePropertySets = new List<LocalizedProductPropertySet>
+                    LocalizedPropertySets = new List<LocalizedProductPropertySet>
                     {
                         new LocalizedProductPropertySet
                         {

@@ -36,7 +36,7 @@ namespace Models.EF.Foundation
         /// <returns>A list of localized entities</returns>
         public IEnumerable<TLocalizedEntity> GetAll(string cultureCode)
         {
-            return Context.Set<TEntity>().Include(entity => entity.LocalizablePropertySets).ToList().Select(entity => entity.GetLocalizedEntity(cultureCode));
+            return Context.Set<TEntity>().Include(entity => entity.LocalizedPropertySets).ToList().Select(entity => entity.GetLocalizedEntity(cultureCode));
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace Models.EF.Foundation
         public TLocalizedEntity Get(int id, string cultureCode)
         {
             var entity = Context.Set<TEntity>().Find(id);
-            Context.Entry(entity).Collection(e => e.LocalizablePropertySets).Load();
+            Context.Entry(entity).Collection(e => e.LocalizedPropertySets).Load();
             return entity.GetLocalizedEntity(cultureCode);
         }
     }

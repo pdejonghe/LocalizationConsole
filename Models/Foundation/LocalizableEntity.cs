@@ -13,7 +13,7 @@ namespace Models.Foundation
         /// <summary>
         /// All localized property sets for the master entity.
         /// </summary>
-        public ICollection<TLocalizablePropertySet> LocalizablePropertySets { get; set; }
+        public ICollection<TLocalizablePropertySet> LocalizedPropertySets { get; set; }
 
         /// <summary>
         /// Method that merges the master entity with the appropriate localizable property set (based on the passed in cultureCode).
